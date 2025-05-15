@@ -1,59 +1,117 @@
-# Marketplace
+# Curso Presencial – Crea y Vende tu Aplicación Móvil con Angular 💰
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+---
 
-## Development server
+## 📆 Fechas de inscripción:
+Primera y segunda semana de Junio
 
-To start a local development server, run:
+## 📅 Fechas del curso:
+Sábado 12 y domingo 13 de Julio
 
-```bash
-ng serve
-```
+## ⏱️ Duración total:
+16 horas (8 horas por día)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛎️ Horario:
+De 9:00 a.m. a 6:00 p.m. ambos días
 
-## Code scaffolding
+## 📍 Ubicación (tentativa):
+**Torre Mítica**, Mitikah, Av. Río Churubusco 601, Xoco, Coyoacán, 03330 Ciudad de México, CDMX
+*(Sujeta a cambio dependiendo del número de inscritos)*
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## ✅ ¿Qué incluye tu inscripción?
+🍱 Alimentos para ambos días  
+🧳 Materiales de apoyo (videos, comandos, y app final)  
+📜 Diploma de participación  
+👕 Playera conmemorativa del curso  
+💲 Costo: $5,000 pesos mexicanos (IVA incluido)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🧠 ¿Qué vas a aprender?
 
-## Building
+Un curso completo donde no solo aprenderás a crear una app móvil con Angular desde cero, sino también cómo calcular su valor, cotizar tu trabajo y venderlo profesionalmente. También aprenderás a usar herramientas como ChatGPT para resolver errores técnicos por tu cuenta.
 
-To build the project run:
+## 🛠️ Tecnologías que aprenderás en este curso
 
-```bash
-ng build
-```
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![ChatGPT](https://img.shields.io/badge/ChatGPT-00A67E?style=for-the-badge&logo=openai&logoColor=white)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🧾 Temario
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 🔰 Día 1 (Sábado) – Fundamentos Técnicos
 
-```bash
-ng test
-```
+**🟢 Introducción a la tecnología**
+- ¿Qué es Angular y para qué sirve?
+- Qué necesitas para ser desarrollador
+- Instalación de Node.js, Angular CLI y VS Code
+- Cómo usar ChatGPT para resolver errores técnicos
 
-## Running end-to-end tests
+**🟢 Primeros pasos con Angular**
+- Fundamentos de HTML, JavaScript y TypeScript
+- Estructura de un proyecto Angular
+- Crear componentes, módulos y servicios
+- Uso de directivas (`*ngIf`, `*ngFor`), inputs y outputs
 
-For end-to-end (e2e) testing, run:
+**🟢 Proyecto base**
+- Clonación de un repositorio desde GitHub
+- Instalación de dependencias
+- Levantar tu primer servidor Angular
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 🚀 Día 2 (Domingo) – Proyecto Final + Finanzas y Ventas
 
-## Additional Resources
+**🔵 Conexión a Base de Datos**
+- Introducción a bases de datos
+- Lectura y escritura desde Angular
+- Conexión a Firebase o API simulada
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**🔵 Aplicación práctica**
+- Desarrollar una app con carrito de compras
+- Formularios, validaciones, rutas y navegación
+
+**🔵 Finanzas para desarrolladores**
+- Cómo crear una empresa legalmente
+- Recomendaciones de régimenes fiscales al SAT
+- Cómo crear una cuenta empresarial
+- Cómo iniciar con tu empresa
+- Cómo llevar la contabilidad de tu empresa
+- Cómo cotizar tu trabajo
+- Cómo calcular costos y márgenes
+- Cómo presentar una propuesta formal
+
+**🔵 Cierre del curso**
+- Entrega de diplomas y playeras
+- Acceso a todos los recursos y videos
+- Resolución de dudas
+- Tips finales
+
+---
+
+## 🎯 ¿Para quién es este curso?
+
+👨‍🎓 Jóvenes desde 18 años sin experiencia previa  
+👩‍💻 Estudiantes universitarios  
+🧑‍🔧 Personas técnicas que quieren aprender a **vender su trabajo**  
+🧠 Freelancers y desarrolladores que quieren aprender Angular
+
+---
+
+## 📲 ¿Qué vamos a hacer?
+
+Vamos a hacer un Marketpalce
+
+![Image](https://github.com/user-attachments/assets/9a7be8a3-4f0e-444a-baa2-e9ae105a63cc)
+![Image](https://github.com/user-attachments/assets/3f9437ae-b565-44fd-9feb-9107a71710f4)
+![Image](https://github.com/user-attachments/assets/397d4626-01dd-471e-afe1-502faa52a250)
+![Image](https://github.com/user-attachments/assets/c4383512-7a56-43cd-9d1c-950680ff815c)
+![Image](https://github.com/user-attachments/assets/e7c5b858-5355-4382-9a60-19174fad6bf4)
