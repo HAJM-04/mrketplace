@@ -1,1 +1,33 @@
-<p>product-list works!</p>
+<div class="product-page">
+  <div class="user-header">
+    <div>
+      <p class="hello">Hello</p>
+      <h2 class="username">Jackson Grim</h2>
+    </div>
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="user-avatar" alt="User">
+  </div>
+
+  <div class="tab-menu">
+    <button class="tab active">
+      <i class="icon">🔳</i>
+      Products
+    </button>
+    <button class="tab">
+      <i class="icon">🛒</i>
+    </button>
+  </div>
+
+  <div class="product-list">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" [alt]="product.name">
+      <div class="product-info">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <div class="product-footer">
+          <span class="price">{{ product.price }}</span>
+          <button class="cart-button">🛒</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
