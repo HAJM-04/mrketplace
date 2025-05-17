@@ -4,14 +4,17 @@
   </div>
 
   <ul class="menu" [class.open]="menuOpen">
-    <li><a routerLink="/auth/login">Login</a></li>
-    <li><a routerLink="/auth/register">Register</a></li>
-      <ng-container *ngIf="isLoggedIn">
-      <li><a routerLink="/products" (click)="toggleMenu()">Productos</a></li>
-      <li><a routerLink="/products/new" (click)="toggleMenu()">Nuevo Producto</a></li>
-      <li><a routerLink="/sales/cart" (click)="toggleMenu()">Carrito</a></li>
-      <li><a routerLink="/sales/history" (click)="toggleMenu()">Historial</a></li>
-      <li><button (click)="logout(); toggleMenu()">Cerrar sesión</button></li>
+    <ng-container *ngIf="isLoggedIn; else loggedOut">
+      <!-- Links para usuarios logueados -->
+      <li><a routerLink="/products/list">Products</a></li>
+      <li><a routerLink="/sales/cart">Cart</a></li>
+      <li><a href="#" (click)="logout(); $event.preventDefault()">Log Out</a></li>
     </ng-container>
+
+    <ng-template #loggedOut>
+      <!-- Links para usuarios no autenticados -->
+      <li><a routerLink="/auth/login">Login</a></li>
+      <li><a routerLink="/auth/register">Register</a></li>
+    </ng-template>
   </ul>
 </nav>

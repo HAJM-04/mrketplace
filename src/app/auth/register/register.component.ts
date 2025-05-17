@@ -18,10 +18,14 @@ export class RegisterComponent {
   password = '';
   passwordConfirmation = '';
   errorMessage = '';
+  successMessage = ''; 
 
   constructor(private authService: AuthService, private router: Router) {}
 
   register() {
+    this.successMessage = '';
+    this.errorMessage = '';
+
     if (!this.email || !this.password || !this.passwordConfirmation) {
       this.errorMessage = 'All fields are required.';
       return;
@@ -33,12 +37,14 @@ export class RegisterComponent {
     }
 
     this.authService.register(this.email, this.password)
-      .then(() => {
-        alert('Successfully registered!');
+    .then(() => {
+      this.successMessage = 'Successfully registered!';
+      setTimeout(() => {
         this.router.navigate(['/auth/login']);
-      })
-      .catch((error) => {
-        this.errorMessage = error.message || 'An error occurred during registration.';
-      });
+      }, 1500);
+    })
+    .catch((error) => {
+      this.errorMessage = error.message || 'An error occurred during registration.';
+    });
   }
 }

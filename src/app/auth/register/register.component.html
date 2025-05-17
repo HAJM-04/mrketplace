@@ -12,4 +12,13 @@
 
     <button type="submit">SIGN UP</button>
   </form>
+  <!--Pop Up emerging window for confirmation-->
+  <div class="toast success" *ngIf="successMessage">
+    {{ successMessage }}
+  </div>
+
+  <div class="toast error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
 </div>
+
