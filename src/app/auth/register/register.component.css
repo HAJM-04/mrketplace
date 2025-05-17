@@ -1,0 +1,40 @@
+.register-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.register-title {
+  font-family: 'nighttraveler', serif;
+  color: #f44336;
+  margin-bottom: 20px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+
+button {
+  padding: 12px;
+  width: 100%;
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff7b7b;
+}
