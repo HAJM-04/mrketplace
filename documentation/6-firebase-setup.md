@@ -31,3 +31,9 @@ If triggering error
 ```sh
  Remove-Item -Recurse -Force .\node_modules\typescript
  ```
+
+ Adding the Firebase Admin to be able to update the Firebase DB created in Firebase Dashboard
+
+```sh
+ npm install --save-dev firebase-admin ts-node dotenv
+```

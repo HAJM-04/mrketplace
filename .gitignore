@@ -45,3 +45,4 @@ Thumbs.db
 .env
 # Ignorar archivos de configuración locales
 src/environments/environment.ts
+serviceAccountKey.json
