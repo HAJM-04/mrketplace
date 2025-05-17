@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProductService, Product } from '../product-services';
 
 @Component({
   selector: 'app-product-list',
@@ -8,25 +9,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
-export class ProductListComponent {
-  products = [
-    {
-      name: 'COVENANT SLEEVE TEE',
-      description: '“Covenant” is track #5 of the album “Of Demons & Mortals.”',
-      price: 50,
-      image: 'assets/images/clothes/covenant-sleeve-tee-front.png',
-    },
-    {
-      name: 'COVENANT COACH JACKET',
-      description: '“Covenant” is track #5 of the album “Of Demons & Mortals.”',
-      price: 100,
-      image: 'assets/images/clothes/covenant-coach-jacket-front.png',
-    },
-    {
-      name: 'COVENANT TEE SHIRT',
-      description: '“Covenant” is track #5 of the album “Of Demons & Mortals.”',
-      price: 45,
-      image: 'assets/images/clothes/covenant-tee-shirt-front.png',
-    },
-  ];
+export class ProductListComponent implements OnInit  {
+  products: Product[] = [];
+
+  constructor(private productService: ProductService) {}
+
+  ngOnInit() {
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data;
+    });
+  }
 }
+

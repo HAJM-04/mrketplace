@@ -96,3 +96,30 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+
+/*Hover Effect*/
+.image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.image-wrapper img {
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-wrapper .back {
+  opacity: 0;
+}
+
+.image-wrapper:hover .back {
+  opacity: 1;
+}
+
+.image-wrapper:hover .front {
+  opacity: 0;
+}

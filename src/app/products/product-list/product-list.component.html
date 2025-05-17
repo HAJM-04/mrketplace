@@ -14,14 +14,19 @@
     </button>
     <button class="tab">
       <i class="icon">🛒</i>
+      Cart
     </button>
   </div>
 
   <div class="product-list">
     <div class="product-card" *ngFor="let product of products">
-      <img [src]="product.image" [alt]="product.name">
+      <!-- Imagen frontal del producto -->
+      <div class="image-wrapper">
+        <img [src]="product['image-front']" [alt]="product.title" class="front">
+        <img [src]="product['image-back']" [alt]="product.title + ' back'" class="back">
+      </div>
       <div class="product-info">
-        <h3>{{ product.name }}</h3>
+        <h3>{{ product.title }}</h3>
         <p>{{ product.description }}</p>
         <div class="product-footer">
           <span class="price">{{ product.price }}</span>
