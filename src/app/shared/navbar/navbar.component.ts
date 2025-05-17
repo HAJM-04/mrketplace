@@ -25,8 +25,8 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(): void {
-    this.authService.logout(); // delega el manejo a AuthService
-    this.menuOpen = false;     // opcional: cerrar menú al salir
+    this.authService.logout(); 
+    this.menuOpen = false;
   }
 
   toggleMenu(): void {
