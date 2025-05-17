@@ -1,7 +1,7 @@
 .product-page {
-  max-width: 420px;
+  max-width: 1024px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .user-header {
@@ -17,28 +17,30 @@
 
 .username {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 .user-avatar {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .tab-menu {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .tab {
   flex: 1;
-  padding: 0.75rem;
+  padding: 0.9rem;
   border: none;
   border-radius: 30px;
-  margin: 0 0.25rem;
+  margin: 0 0.5rem;
   font-weight: bold;
+  font-size: 1.1rem;
   cursor: pointer;
   background: linear-gradient(90deg, #ff3e5e, #ff9138);
   color: white;
@@ -51,61 +53,36 @@
 .product-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
 }
+
+/* CARD */
 
 .product-card {
-  background-color: white;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.product-card img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.product-info h3 {
-  font-size: 1rem;
-  color: #e84343;
-  margin-bottom: 0.25rem;
-}
-
-.product-info p {
-  font-size: 0.85rem;
-  margin-bottom: 0.5rem;
-}
-
-.product-footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 920px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  border: 3px solid #eee;
 }
 
-.price {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.cart-button {
-  background-color: #ff3e5e;
-  color: white;
-  border: none;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-
-/*Hover Effect*/
+/* WRAPPER DE IMAGEN CON HOVER */
 .image-wrapper {
   position: relative;
-  width: 100%;
+  width: 280px;
+  min-width: 280px;
+  height: auto;
 }
 
 .image-wrapper img {
   width: 100%;
+  border-radius: 12px;
   transition: opacity 0.3s ease-in-out;
   position: absolute;
   top: 0;
@@ -122,4 +99,108 @@
 
 .image-wrapper:hover .front {
   opacity: 0;
+}
+
+/* INFO PRODUCTO */
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h3 {
+  font-size: 1.5rem;
+  color: #ff3e5e;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.product-info p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #222;
+}
+
+.product-footer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* BOTÓN DE PRECIO */
+.price-box {
+  background-color: white;
+  padding: 0.7rem 1.5rem;
+  border: 3px solid #ddd;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* BOTÓN DE CARRITO */
+.cart-button {
+  background-color: #ff3e5e;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+
+/*Overlapping Effect*/
+
+.segmented-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #ff3e5e, #ff9138);
+  border-radius: 40px;
+  padding: 0.25rem;
+  width: fit-content;
+  margin: 0 auto 2rem auto;
+}
+
+.segment {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  padding: 0.75rem 1.8rem; /* Aumentamos padding horizontal */
+  color: white;
+  font-weight: bold;
+  border-radius: 40px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;        /* Alinea ícono + texto en línea */
+  align-items: center;         /* Centrado vertical */
+  justify-content: center;     /* Centrado horizontal */
+  gap: 0.5rem;                 /* Espacio entre ícono y texto */
+}
+
+.segment img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+
+
+.segment.active {
+  background-color: #ff3e5e;
+  color: white;
+}
+
+.segment .icon {
+  margin-right: 0.5rem;
 }

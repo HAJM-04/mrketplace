@@ -7,30 +7,32 @@
     <img src="https://randomuser.me/api/portraits/men/32.jpg" class="user-avatar" alt="User">
   </div>
 
-  <div class="tab-menu">
-    <button class="tab active">
-      <i class="icon">🔳</i>
+  <div class="segmented-control">
+    <button class="segment active">
+      <img src="assets/images/icons/products-icon.png" alt="Products">
       Products
     </button>
-    <button class="tab">
-      <i class="icon">🛒</i>
-      Cart
+    <button class="segment">
+      <img src="assets/images/icons/cart-buy-icon.png">
     </button>
   </div>
 
   <div class="product-list">
     <div class="product-card" *ngFor="let product of products">
-      <!-- Imagen frontal del producto -->
       <div class="image-wrapper">
-        <img [src]="product['image-front']" [alt]="product.title" class="front">
-        <img [src]="product['image-back']" [alt]="product.title + ' back'" class="back">
+        <img [src]="product['image-front']" class="front" />
+        <img [src]="product['image-back']" class="back" />
       </div>
+
       <div class="product-info">
         <h3>{{ product.title }}</h3>
         <p>{{ product.description }}</p>
+
         <div class="product-footer">
-          <span class="price">{{ product.price }}</span>
-          <button class="cart-button">🛒</button>
+          <span class="price-box">${{ product.price }}</span>
+          <button class="cart-button">
+            <img src="assets/images/icons/cart-buy-icon.png">
+          </button>
         </div>
       </div>
     </div>
