@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'EvilDead';
+  src: url('./assets/fonts/evil_dead/EVILDEAD.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'NightTraveler';
+  src: url('./assets/fonts/night_traveler/nighttraveler.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('./assets/images/background/background-app.png');
+  background-size: cover;
+  background-repeat: repeat;
+}

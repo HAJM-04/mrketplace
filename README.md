@@ -108,7 +108,7 @@ Un curso completo donde no solo aprenderás a crear una app móvil con Angular d
 
 ## 📲 ¿Qué vamos a hacer?
 
-Vamos a hacer un Marketpalce
+Vamos a hacer un Marketplace
 
 ![Image](https://github.com/user-attachments/assets/9a7be8a3-4f0e-444a-baa2-e9ae105a63cc)
 ![Image](https://github.com/user-attachments/assets/3f9437ae-b565-44fd-9feb-9107a71710f4)
