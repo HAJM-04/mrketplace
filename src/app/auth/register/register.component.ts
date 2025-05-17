@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   name = '';
@@ -14,21 +17,28 @@ export class RegisterComponent {
   email = '';
   password = '';
   passwordConfirmation = '';
+  errorMessage = '';
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   register() {
-    if (this.password !== this.passwordConfirmation) {
-      alert('Passwords do not match!');
+    if (!this.email || !this.password || !this.passwordConfirmation) {
+      this.errorMessage = 'All fields are required.';
       return;
     }
 
-    // Aquí puedes guardar en localStorage o hacer una petición a backend
-    console.log('Registering:', {
-      name: this.name,
-      surname: this.surname,
-      email: this.email,
-      password: this.password,
-    });
+    if (this.password !== this.passwordConfirmation) {
+      this.errorMessage = 'Passwords do not match!';
+      return;
+    }
 
-    alert('Successfully registered!');
+    this.authService.register(this.email, this.password)
+      .then(() => {
+        alert('Successfully registered!');
+        this.router.navigate(['/auth/login']);
+      })
+      .catch((error) => {
+        this.errorMessage = error.message || 'An error occurred during registration.';
+      });
   }
 }

@@ -14,6 +14,8 @@
       <a href="#">Forgot Password?</a>
     </div>
 
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
     <button type="submit">SIGN IN</button>
 
     <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>

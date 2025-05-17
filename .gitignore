@@ -43,3 +43,5 @@ Thumbs.db
 
 # Environment variables
 .env
+# Ignorar archivos de configuración locales
+src/environments/environment.ts

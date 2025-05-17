@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common'; 
-// Firebase imports for Authentication
+import { CommonModule } from '@angular/common';
 import { AuthService } from '../auth.service';
 
 @Component({
   standalone: true,
   selector: 'app-login',
-  imports: [ FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -20,21 +19,19 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
-    // Authentication Validation
-    this.authService.login(this.email, this.password)
-    .then(() => {
-      localStorage.setItem('user', JSON.stringify({ email: this.email }));
-      this.router.navigate(['/products']);
-    })
-    .catch(error => {
-        this.errorMessage = 'Wrong credentials or account not founded.';
-    });
-    // Validación básica (solo para demostrar)
-    if (this.email && this.password) {
-      localStorage.setItem('user', JSON.stringify({ email: this.email }));
-      this.router.navigate(['/products']);
-    } else {
+    if (!this.email || !this.password) {
       this.errorMessage = 'Por favor, ingresa tu correo y contraseña.';
+      return;
     }
+
+    this.authService.login(this.email, this.password)
+      .then(() => {
+        localStorage.setItem('user', JSON.stringify({ email: this.email }));
+        this.router.navigate(['/products']);
+      })
+      .catch(error => {
+        this.errorMessage = 'Credenciales incorrectas o cuenta no encontrada.';
+        console.error(error);
+      });
   }
 }

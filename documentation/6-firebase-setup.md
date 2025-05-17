@@ -12,3 +12,22 @@ export const firebaseConfig = {
   appId: "TU_APP_ID",
 };
 ```
+
+```sh
+npm install dotenv
+npm install --save-dev @types/node
+```
+
+Create environment variables
+
+```sh
+npx tsc tools/set-env.ts
+npm install --save-dev ts-node typescript
+node tools/set-env.js
+```
+
+If triggering error
+
+```sh
+ Remove-Item -Recurse -Force .\node_modules\typescript
+ ```
