@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     const key = environment.firebaseConfig.apiKey;
     console.log('🔑 apiKey full:', key);
     console.log('🔑 apiKey length:', key.length);
-
+    console.log('📂 storageBucket:', environment.firebaseConfig.storageBucket);
   }
 
   logout() {
