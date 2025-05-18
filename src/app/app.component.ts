@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+// Debugger API Key import
+import { environment } from '../environments/environment';
 // Logout Logic
 import { Router } from '@angular/router';
 import { Auth } from '@angular/fire/auth';
@@ -23,6 +25,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const user = localStorage.getItem('user');
     this.isLoggedIn = !!user;
+    // Debugger API Key
+    console.log('🔥 Firebase config loaded:', environment.firebaseConfig);
+
   }
 
   logout() {
