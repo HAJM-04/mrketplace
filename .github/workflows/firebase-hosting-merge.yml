@@ -47,5 +47,5 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MARKETPLACE_A9AB1 }}
-          channelId: live
+          #channelId: live
           projectId: marketplace-a9ab1
