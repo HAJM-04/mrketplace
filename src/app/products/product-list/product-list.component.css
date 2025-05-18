@@ -314,12 +314,26 @@
     gap: 1rem;
   }
 
-  /* Imagen: full width, auto height */
   .image-wrapper {
-    width: 100%;
-    height: 350px; 
+    position: relative;
+    width: 100%;       /* ocupa todo el ancho del card */
+    max-width: 280px;  /* o el ancho fijo que necesites */
+    aspect-ratio: 280 / 350;  /* mantiene la proporción */
+    overflow: hidden;  
   }
- 
+
+  .image-wrapper img.front,
+  .image-wrapper img.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: opacity 0.3s ease-in-out;
+  }
+
   .image-wrapper img {
     position: absolute;  /* superpuestas */
     top: 0; left: 0;
