@@ -27,6 +27,9 @@ export class AppComponent implements OnInit {
     this.isLoggedIn = !!user;
     // Debugger API Key
     console.log('🔥 Firebase config loaded:', environment.firebaseConfig);
+    const key = environment.firebaseConfig.apiKey;
+    console.log('🔑 apiKey full:', key);
+    console.log('🔑 apiKey length:', key.length);
 
   }
 
