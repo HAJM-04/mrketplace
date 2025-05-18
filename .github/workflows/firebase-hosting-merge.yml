@@ -9,11 +9,11 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1) Checkout del repo
+      # 1) Trae tu código
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2) Node.js 20.x (req. por Firebase CLI v14+)
+      # 2) Node.js >=20 para Firebase CLI v14+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4) Genera dinámicamente tu environment.ts
+      # 4) Genera tu src/environments/environment.ts
       - name: Generate environment.ts
         run: |
           cat <<EOF > src/environments/environment.ts
@@ -45,18 +45,12 @@ jobs:
       - name: Build Angular (prod)
         run: npm run build -- --configuration=production
 
-      # 6) Autentica Firebase CLI con tu Service Account
-      - name: Authenticate Firebase CLI
-        run: |
-          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MARKETPLACE_A9AB1 }}" > $HOME/firebase-key.json
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: $HOME/firebase-key.json
-
-      # 7) Deploy a Hosting (producción)
+      # 6) Deploy usando FIREBASE_TOKEN
       - name: Deploy to Firebase Hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           npx firebase-tools deploy \
             --only hosting \
-            --project ${{ secrets.FIREBASE_PROJECT_ID }}
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: $HOME/firebase-key.json
+            --project ${{ secrets.FIREBASE_PROJECT_ID }} \
+            --non-interactive
