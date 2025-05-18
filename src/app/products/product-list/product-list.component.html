@@ -28,6 +28,27 @@
         <h3>{{ product.title }}</h3>
         <p>{{ product.description }}</p>
 
+        <!-- Aquí insertas el nuevo bloque -->
+        <div class="product-options">
+          <div class="color-selector">
+            <span>Color:</span>
+            <!-- Usamos un botón por cada color; añade más si necesitas -->
+            <button class="color-option black active"></button>
+          </div>
+          <div class="size-selector">
+            <span>Size:</span>
+            <button class="size-option selected">XS</button>
+            <button class="size-option">S</button>
+            <button class="size-option">M</button>
+            <button class="size-option">L</button>
+            <button class="size-option">XL</button>
+            <button class="size-option">2XL</button>
+            <button class="size-option">3XL</button>
+            <button class="size-option disabled">4XL</button>
+          </div>
+        </div>
+  <!-- /product-options -->
+
         <div class="product-footer">
           <span class="price-box">${{ product.price }}</span>
           <button class="cart-button">

@@ -37,3 +37,34 @@ If triggering error
 ```sh
  npm install --save-dev firebase-admin ts-node dotenv
 ```
+
+## Deployment App in Firebase
+
+Install Firebase Global
+
+```sh
+npm install -g firebase-tools
+```
+
+Firebase authentication
+
+```sh
+firebase login
+```
+Hosting Initiation
+
+```sh
+firebase init hosting
+```
+
+Deploy the application inside Firebase
+
+```sh
+firebase deploy
+```
+
+### Test before deployment
+
+```sh
+firebase serve --only hosting
+```
