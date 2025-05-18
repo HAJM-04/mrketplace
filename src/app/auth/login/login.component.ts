@@ -16,22 +16,37 @@ export class LoginComponent {
   password = '';
   errorMessage = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-  login() {
+  async login() {
+    this.errorMessage = '';
+    console.log('🔑 Intentando login con:', this.email);
+
     if (!this.email || !this.password) {
       this.errorMessage = 'Por favor, ingresa tu correo y contraseña.';
       return;
     }
 
-    this.authService.login(this.email, this.password)
-      .then(() => {
-        localStorage.setItem('user', JSON.stringify({ email: this.email }));
-        this.router.navigate(['/products']);
-      })
-      .catch(error => {
-        this.errorMessage = 'Credenciales incorrectas o cuenta no encontrada.';
-        console.error(error);
-      });
+    try {
+      const userCred = await this.authService.login(this.email, this.password);
+      console.log('✅ Login exitoso:', userCred);
+      localStorage.setItem('user', JSON.stringify({ email: this.email }));
+      this.router.navigate(['/products']);
+    } catch (err: any) {
+      // Loguea todo el objeto de error
+      console.error('❌ Firebase Auth error object:', err);
+
+      // Extrae y muestra código y mensaje si existen
+      const code = err?.code || 'unknown-error';
+      const message = err?.message || 'No hay mensaje de error.';
+      console.error('Código de error:', code);
+      console.error('Mensaje de error:', message);
+
+      // Muestra algo en pantalla para debug
+      this.errorMessage = `Error [${code}]: ${message}`;
+    }
   }
 }
