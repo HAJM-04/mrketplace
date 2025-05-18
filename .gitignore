@@ -46,3 +46,6 @@ Thumbs.db
 # Ignorar archivos de configuración locales
 src/environments/environment.ts
 serviceAccountKey.json
+
+# Ignore github environment varibales automation
+.github\automations\environment-variables-deployments.sh
