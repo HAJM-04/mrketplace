@@ -42,7 +42,7 @@ const newProducts = [
 async function seed() {
   try {
     for (const p of newProducts) {
-      const ref = db.collection('cloth-store').doc(p.id);
+      const ref = await db.collection('cloth-store').add(p);
       const snap = await ref.get();
       if (!snap.exists) {
         await ref.set(p);
