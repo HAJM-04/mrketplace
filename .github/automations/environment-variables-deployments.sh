@@ -1,10 +1,10 @@
 # Variables de entorno (en WSL puedes exportarlas o escribir directamente su valor)
-API_KEY="AIzaSy…"
+API_KEY="AIzaSyAiGP5BPOz1hE9RSqEcg_isn1MjbOuo2d4"
 AUTH_DOMAIN="marketplace-a9ab1.firebaseapp.com"
 PROJECT_ID="marketplace-a9ab1"
 STORAGE_BUCKET="marketplace-a9ab1.firebasestorage.app"
 MESSAGING_SENDER_ID="852699536174"
-APP_ID="1:852699536174:web:…"
+APP_ID="1:852699536174:web:1ba257ec00e641d62df8bf"
 MEASUREMENT_ID="G-Y07CXG90G3"
 SA_PATH="/mnt/c/Users/User/OneDrive/Documents/github/marketplace/serviceAccountKey.json"
 
