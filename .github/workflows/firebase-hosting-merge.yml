@@ -2,33 +2,28 @@
 name: Deploy to Firebase Hosting on merge
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1) Trae tu código
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # 2) Node.js >=20 para Firebase CLI v14+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
 
-      # 3) Instala dependencias
       - name: Install dependencies
         run: npm ci
 
-      # 4) Genera tu src/environments/environment.ts
+      # DEV env (usado al correr localmente con ng serve)
       - name: Generate environment.ts
         run: |
           cat <<EOF > src/environments/environment.ts
           export const environment = {
-            production: true,
+            production: false,
             firebaseConfig: {
               apiKey: '${{ secrets.FIREBASE_API_KEY }}',
               authDomain: '${{ secrets.FIREBASE_AUTH_DOMAIN }}',
@@ -41,6 +36,7 @@ jobs:
           };
           EOF
 
+      # PRODUCCIÓN env (reemplazado al hacer ng build --configuration=production)
       - name: Generate production environment file
         run: |
           cat <<EOF > src/environments/environment.prod.ts
@@ -58,20 +54,13 @@ jobs:
           };
           EOF
 
-
-      # 5) Build de Angular
       - name: Build Angular (prod)
         run: npm run build -- --configuration=production
 
       - name: Authenticate Firebase CLI
         run: echo "${{ secrets.FIREBASE_TOKEN }}" > token.txt
 
-      # 6) Deploy usando FIREBASE_TOKEN
       - name: Deploy to Firebase Hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: |
-          npx firebase-tools deploy \
-            --only hosting \
-            --project ${{ secrets.FIREBASE_PROJECT_ID }} \
-            --non-interactive
+        run: npx firebase-tools deploy --only hosting --project ${{ secrets.FIREBASE_PROJECT_ID }} --non-interactive

@@ -47,5 +47,7 @@ Thumbs.db
 src/environments/environment.ts
 serviceAccountKey.json
 
+src\environments\environment.prod.ts
+
 # Ignore github environment varibales automation
 .github\automations\environment-variables-deployments.sh
