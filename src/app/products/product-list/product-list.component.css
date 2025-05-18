@@ -276,3 +276,95 @@
   cursor: not-allowed;
   text-decoration: line-through;
 }
+
+/* === Breakpoint para móvil (≤ 600px) === */
+@media (max-width: 600px) {
+  /* Reduce márgenes generales */
+  .product-page {
+    padding: 1rem;
+  }
+
+  /* Header: apilar y centrar */
+  .user-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Segmented control: full width y botones más compactos */
+  .segmented-control {
+    width: 100%;
+    padding: 0.25rem 0;
+  }
+  .segment {
+    flex: 1;
+    min-width: 0;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .segment img {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Cards en columna */
+  .product-card {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  /* Imagen: full width, auto height */
+  .image-wrapper {
+    width: 100%;
+    height: 350px; 
+  }
+ 
+  .image-wrapper img {
+    position: absolute;  /* superpuestas */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .image-wrapper .back {
+    opacity: 0;
+  }
+
+  /* Info y footer debajo */
+  .product-info {
+    width: 100%;
+  }
+  .product-footer {
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* Price box y botón: tamaño un poco menor */
+  .price-box {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  .cart-button {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  /* Selector de talla: 2 filas de 4 botones, con wrap */
+  .size-selector {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+  .size-selector span,
+  .size-guide {
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+  }
+  .size-option {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    min-width: 0;
+  }
+}
