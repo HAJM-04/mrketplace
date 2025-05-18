@@ -1,13 +1,13 @@
-// scripts/seed-products.js
+// 1) Install dotenv and firebase-admin
+// Required instead of import because this file is executed with node
 require('dotenv').config();
 const admin = require('firebase-admin');
 const serviceAccount = require('../serviceAccountKey.json');
-const path = require('path');
 
-// 1) Lee la ruta al service account desde el .env
+// 2) Read environment variables Service account route described inside .env
 const keyPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 if (!keyPath) {
-  console.error('❌ No se encontró GOOGLE_APPLICATION_CREDENTIALS en tu .env');
+  console.error('❌ GOOGLE_APPLICATION_CREDENTIALS does not exist inside .env file');
   process.exit(1);
 }
 
@@ -16,10 +16,10 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
+// 4) Initialize Firestore
 const db = admin.firestore();
 
-
-// 4) Define sólo los productos que faltan (ID “2” y “3”)
+// 5) Data set definition
 const newProducts = [
   {
     id: '2',
@@ -39,24 +39,27 @@ const newProducts = [
   },
 ];
 
+
+// 6) Add the products to the collection
 async function seed() {
   try {
+    const prodCollection = db.collection('cloth-store');
     for (const p of newProducts) {
-      const ref = await db.collection('cloth-store').add(p);
-      const snap = await ref.get();
-      if (!snap.exists) {
-        await ref.set(p);
-        console.log(`✅ Creado producto ${p.id}`);
+      const snap = await prodCollection.where('id', '==', p.id).get(); 
+      if (snap.empty) {
+        await prodCollection.add(p);
+        console.log(`✅ Product number ${p.id} created`);
       } else {
-        console.log(`ℹ️  El producto ${p.id} ya existe, lo omitimos.`);
+        console.log(`ℹ️  The product number ${p.id} already exist, ommitted.`);
       }
     }
-    console.log('🎉 Seed completo');
+    console.log('🎉 Seed completed');
     process.exit(0);
   } catch (e) {
-    console.error('❌ Error en seed:', e);
+    console.error('❌ Error seed:', e);
     process.exit(1);
   }
 }
 
+// 7) Execute the function
 seed();
