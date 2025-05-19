@@ -22,20 +22,26 @@ const db = admin.firestore();
 // 5) Data set definition
 const newProducts = [
   {
-    id: '2',
+    id: '4',
     title: 'Covenant Coach Jacket',
     description: `"Covenant" is track #5 of the album "Of Demons & Mortals."`,
     price: 100,
     'image-front': 'https://drive.google.com/uc?export=view&id=TU_ID_FRONT_2',
     'image-back' : 'https://drive.google.com/uc?export=view&id=TU_ID_BACK_2',
+    'size_s': 'S',
+    'size_m': 'M',
+    'size_l': 'L',
   },
   {
-    id: '3',
+    id: '5',
     title: 'Covenant Tee Shirt',
     description: `"Covenant" is track #5 of the album "Of Demons & Mortals."`,
     price: 45,
     'image-front': 'https://drive.google.com/uc?export=view&id=TU_ID_FRONT_3',
     'image-back' : 'https://drive.google.com/uc?export=view&id=TU_ID_BACK_3',
+    'size_s': 'S',
+    'size_m': 'M',
+    'size_l': 'L',
   },
 ];
 

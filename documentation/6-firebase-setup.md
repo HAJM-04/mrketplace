@@ -68,3 +68,9 @@ firebase deploy
 ```sh
 firebase serve --only hosting
 ```
+
+## Trigger Seed Product Generation
+
+```sh
+node scripts/seed-products.js
+```

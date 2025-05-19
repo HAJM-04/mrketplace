@@ -9,6 +9,7 @@ export interface Product {
   price: number;
   'image-front': string;
   'image-back': string;
+  sizes: { label: string; available: boolean }[];
 }
 
 @Injectable({ providedIn: 'root' })
