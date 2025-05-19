@@ -18,17 +18,78 @@ body {
   background-repeat: repeat;
 }
 
+/*
+    Global Styles Defaults
+*/
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff4c4c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #e03b3b;
+}
+
+ h1 {
+  font-family: 'EvilDead', sans-serif;
+  font-size: 28px;
+  color: #ff4c4c;
+  margin: 0;
+ }
+
+h2 {
+  font-family: 'NightTraveler', sans-serif;
+  font-size: 25px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-family: 'serif';
+  font-size: 20px;
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+
+ .error {
+  color: red;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+ /*
+    Global Styles Defaults
+*/
+
+
 /*   
 Body App Global Styles
  */
-
- h4 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ff3e5e;
-  font-family: 'EvilDead';
-  src: url('./assets/fonts/evil_dead/EVILDEAD.TTF') format('truetype');
- }
 
  .product-page {
   max-width: 1024px;

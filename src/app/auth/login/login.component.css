@@ -8,66 +8,6 @@
   font-family: Arial, sans-serif; 
 }
 
-.title {
-  font-family: 'EvilDead', sans-serif;
-  font-size: 28px;
-  color: #ff4c4c;
-  margin: 0;
-}
-
-.subtitle {
-  font-family: 'NightTraveler', sans-serif;
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 10px;
-}
-
-.welcome {
-  font-family: 'serif';
-  font-size: 20px;
-  color: #e74c3c;
-  margin-bottom: 20px;
-}
-
-form input[type="email"],
-form input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 14px;
-}
-
-.form-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  margin-bottom: 16px;
-}
-
-button[type="submit"] {
-  width: 100%;
-  padding: 12px;
-  background-color: #ff4c4c;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  background-color: #e03b3b;
-}
-
-.error {
-  color: red;
-  font-size: 13px;
-  margin-top: 10px;
-}
-
 /* Titles Custom Style */
 .login-container h1 {
   font-family: 'EvilDead', sans-serif;
