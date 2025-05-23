@@ -108,8 +108,9 @@ Un curso completo donde no solo aprenderás a crear una app móvil con Angular d
 
 ## 📲 ¿Qué vamos a hacer?
 
-Vamos a hacer un [Marketplace](https://marketplace-a9ab1.web.app/auth/login)
-[Presentación](https://www.canva.com/design/DAGoMmCYD7g/vOfRdYn8xsDxuJzm6qOEmg/edit?utm_content=DAGoMmCYD7g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- Vamos a hacer un [Marketplace](https://marketplace-a9ab1.web.app/auth/login)
+- Tendremos una [Presentación](https://www.canva.com/design/DAGoMmCYD7g/vOfRdYn8xsDxuJzm6qOEmg/edit?utm_content=DAGoMmCYD7g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- Adicionalmente una documentación de LOGS y COMANDOS
 <!--
 ![Image](https://github.com/user-attachments/assets/9a7be8a3-4f0e-444a-baa2-e9ae105a63cc)
 ![Image](https://github.com/user-attachments/assets/3f9437ae-b565-44fd-9feb-9107a71710f4)
