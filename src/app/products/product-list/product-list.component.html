@@ -12,9 +12,18 @@
       <img src="assets/images/icons/products-icon.png" alt="Products">
       Products
     </button>
-    <button class="segment" [routerLink]="['/sales', 'cart']" routerLinkActive="active">
-      <img src="assets/images/icons/cart-buy-icon.png">
+    <button
+      class="segment"
+      [routerLink]="['/sales','cart']"
+      routerLinkActive="active">
+      <img src="assets/images/icons/cart-buy-icon.png" alt="Cart">
+      <span class="badge">{{ cartCount$ | async }}</span>
     </button>
+  </div>
+
+   <!-- Toast Pop Up -->
+  <div class="toast" *ngIf="showToast">
+    {{ toastMessage }}
   </div>
 
   <div class="product-list">
@@ -35,19 +44,39 @@
             <!-- Usamos un botón por cada color; añade más si necesitas -->
             <button class="color-option black active"></button>
           </div>
-          <div class="size-selector">
-            <span>Size:</span>
-            <button class="size-option">{{ product.size_s }}</button>
-            <button class="size-option">{{ product.size_m }}</button>
-            <button class="size-option">{{ product.size_l }}</button>
-          </div>
+            <div class="size-selector">
+              <span>Size:</span>
+              <button
+                class="size-option"
+                [class.active]="selectedSizes[product.id] === product.size_s"
+                (click)="selectedSizes[product.id] = product.size_s">
+                {{ product.size_s }}
+              </button>
+              <button
+                class="size-option"
+                [class.active]="selectedSizes[product.id] === product.size_m"
+                (click)="selectedSizes[product.id] = product.size_m">
+                {{ product.size_m }}
+              </button>
+              <button
+                class="size-option"
+                [class.active]="selectedSizes[product.id] === product.size_l"
+                (click)="selectedSizes[product.id] = product.size_l">
+                {{ product.size_l }}
+              </button>
+            </div>
         </div>
   <!-- /product-options -->
 
         <div class="product-footer">
           <span class="price-box">${{ product.price }}</span>
-          <button class="cart-button">
-            <img src="assets/images/icons/cart-buy-icon.png">
+          <button
+            class="cart-button"
+            (click)="onAddToCart(
+              product,
+              selectedSizes[product.id] || product.size_s
+            )">
+            <img src="assets/images/icons/cart-buy-icon.png" alt="Add">
           </button>
         </div>
       </div>
