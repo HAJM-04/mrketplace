@@ -4,11 +4,11 @@
       <h2>Hello</h2>
       <h1>Jackson Grim</h1>
     </div>
-    <img src="../../../assets/images/profile/jackson-profile.jpg" class="user-avatar" alt="Jackson Grim">
+    <img src="../../../assets/images/profile/jackson-profile.jpg" class="user-avatar" alt="Jackson Grim" />
   </div>
 
   <div class="segmented-control">
-      <button class="segment" [routerLink]="['/products']" routerLinkActive="active">
+    <button class="segment" [routerLink]="['/products']" routerLinkActive="active">
       <img src="assets/images/icons/products-icon.png" alt="Products" />
     </button>
     <button class="segment active">
@@ -17,7 +17,6 @@
     </button>
   </div>
 
-  <!-- Detalles de la orden -->
   <div class="order-details">
     <h1>ORDER DETAILS</h1>
     <div class="order-line">
@@ -29,24 +28,28 @@
       <span>${{ totalCost }}</span>
     </div>
     <button class="segment active">Payment</button>
-    
-    <!-- Lista de productos -->
-    <div class="cart-products">
-      <h1>CART PRODUCTS</h1>
-      <div class="cart-item" *ngFor="let item of cartItems">
-        <img
-          [src]="item['image-front']"
-          [alt]="item.title"
-          class="item-image"
-        />
-        <div class="item-info">
-          <h5>{{ item.title }}</h5>
-          <div>Size: {{ item.size }}</div>
-          <div>Units: {{ item.units }}</div>
-          <div>Unit Price: ${{ item.price }}</div>
+  </div>
+
+  <div class="product-list">
+    <h1>CART PRODUCTS</h1>
+    <div class="product-card" *ngFor="let item of cartItems">
+      <div class="image-wrapper">
+        <img [src]="item['image-front']" class="front" />
+      </div>
+
+      <div class="product-info">
+        <h5>{{ item.title }}</h5>
+        <p>
+          <strong>Size:</strong> {{ item.size }}<br />
+          <strong>Units:</strong> {{ item.units }}<br />
+          <strong>Unit Price:</strong> ${{ item.price }}
+        </p>
+
+        <div class="product-footer">
+          <span class="price-box">${{ item.price * item.units }}</span>
           <div class="actions">
             <button class="remove" (click)="removeUnit(item)">✖</button>
-            <button class="add"    (click)="addUnit(item)">✔</button>
+            <button class="add" (click)="addUnit(item)">✔</button>
           </div>
         </div>
       </div>
