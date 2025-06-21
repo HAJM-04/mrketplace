@@ -20,3 +20,22 @@ Has tomado una gran decisión al invertir en ti mismo en algo que no es perecede
 - [Discord](https://discord.gg/g7uyMDUf)
 - [Aplicación](https://marketplace-a9ab1.web.app/auth/login)
 - [Presentación](https://www.canva.com/design/DAGoMmCYD7g/vOfRdYn8xsDxuJzm6qOEmg/edit?utm_content=DAGoMmCYD7g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+---
+
+## 🛜 Wi-Fi  
+📡 SSID 2.4 GHz: INFINITUMCEFC_2.4  
+📡 SSID 5 GHz : INFINITUMCEFC_5  
+🔑 Password : gE36Uh3m7n  
+
+---
+
+## ⚖️ Abogado Recomendado  
+🧑‍💼 Name : Pablo Villagomez  
+📞 Phone : +52 55 1151 5730  
+
+---
+
+## 📊 Contador Recomendado
+🧑‍💼 Name : Gabriel Fuentes  
+📞 Phone : +52 55 2213 4070  
