@@ -1,5 +1,11 @@
 # App Design
 
+## Create Angular Workspace
+
+```sh
+ng new marketplace
+```
+
 ## Create App Modules
 
 ```sh
